@@ -9,18 +9,30 @@
 <body>
     <div data-testid="slackUserName">olumide oni</div>
 
-    <img src="https://ca.slack-edge.com/T05FFAA91JP-U05R5ACAKML-17984610058c-512" alt="Your Slack Username" data-testid="slackDisplayImage">
+    <img src="https://ca.slack-edge.com/T05FFAA91JP-U05R5ACAKML-17984610058c-512" alt="olumide oni" data-testid="slackDisplayImage">
 
     <div data-testid="currentDayOfTheWeek">Friday</div>
 
-    <div data-testid="myTrack">Frontend</div>
+    <div data-testid="currentDayOfTheWeek"></div>
 
-    <a href="your-github-repository-url" data-testid="githubURL">GitHub Repository</a>
+    <a href="https://github.com/lumzyj/FrontendPage.git" data-testid="githubURL">GitHub Repository</a>
 
     
     <div data-testid="currentUTCTime"></div>
 
     <script>
+        
+        function getCurrentDayOfWeek() {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentDate = new Date();
+            const dayIndex = currentDate.getDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        // Display the current day of the week
+        const currentDayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+        const currentDayOfWeek = getCurrentDayOfWeek();
+        currentDayOfWeekElement.textContent = `Current Day of the Week: ${currentDayOfWeek}`;
         // Function to get the current UTC time in milliseconds
         function getCurrentUTCTime() {
             return new Date().getTime();
