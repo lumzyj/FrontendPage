@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Your Frontend Page</title>
+</head>
+<body>
+    <div data-testid="slackUserName">olumide oni</div>
+
+    <img src="https://ca.slack-edge.com/T05FFAA91JP-U05R5ACAKML-17984610058c-512" alt="Your Slack Username" data-testid="slackDisplayImage">
+
+    <div data-testid="currentDayOfTheWeek">Friday</div>
+
+    <div data-testid="myTrack">Frontend</div>
+
+    <a href="your-github-repository-url" data-testid="githubURL">GitHub Repository</a>
+
+    
+    <div data-testid="currentUTCTime"></div>
+
+    <script>
+        // Function to get the current UTC time in milliseconds
+        function getCurrentUTCTime() {
+            return new Date().getTime();
+        }
+
+        // Display the current UTC time
+        const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+        const currentUTCTime = getCurrentUTCTime();
+        currentUTCTimeElement.textContent = `Current UTC Time: ${currentUTCTime} milliseconds`;
+    </script>
+</body>
+</html>
+
