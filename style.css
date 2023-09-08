@@ -1,5 +1,5 @@
 
-/* Style for the body */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -12,7 +12,7 @@ body {
     height: 100vh;
 }
 
-/* Style for the container */
+
 .container {
     text-align: center;
     background-color: #fff;
@@ -21,14 +21,14 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the Slack username */
+
 div[data-testid="slackUserName"] {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* Style for the Slack display image */
+
 img[data-testid="slackDisplayImage"] {
     width: 150px;
     height: 150px;
@@ -36,14 +36,13 @@ img[data-testid="slackDisplayImage"] {
     margin: 20px 0;
 }
 
-/* Style for the current day of the week */
 div[data-testid="currentDayOfTheWeek"] {
     font-size: 24px;
     color: #555;
     margin-bottom: 10px;
 }
 
-/* Style for the track */
+
 div[data-testid="myTrack"] {
     font-size: 20px;
     font-style: italic;
@@ -51,7 +50,7 @@ div[data-testid="myTrack"] {
     margin-bottom: 10px;
 }
 
-/* Style for the GitHub repository link */
+
 a[data-testid="githubURL"] {
     display: block;
     text-decoration: none;
@@ -63,7 +62,7 @@ a[data-testid="githubURL"] {
     margin-top: 20px;
 }
 
-/* Style for the current UTC time */
+
 div[data-testid="currentUTCTime"] {
     font-size: 18px;
     color: #888;

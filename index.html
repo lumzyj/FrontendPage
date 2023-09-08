@@ -13,35 +13,27 @@
 
     <div data-testid="currentDayOfTheWeek">Friday</div>
 
-    <div data-testid="currentDayOfTheWeek"></div>
+    <div data-testid="currentUTCTime"></div>
 
     <a href="https://github.com/lumzyj/FrontendPage.git" data-testid="githubURL">GitHub Repository</a>
 
-    
-    <div data-testid="currentUTCTime"></div>
-
     <script>
-        
-        function getCurrentDayOfWeek() {
-            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const currentDate = new Date();
-            const dayIndex = currentDate.getDay();
-            return daysOfWeek[dayIndex];
+        // Function to update the digital clock
+        function updateDigitalClock() {
+            const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            const currentTime = new Date();
+            const hours = String(currentTime.getUTCHours()).padStart(2, '0');
+            const minutes = String(currentTime.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(currentTime.getUTCSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            currentUTCTimeElement.textContent = `Current UTC Time: ${timeString}`;
         }
 
-        // Display the current day of the week
-        const currentDayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-        const currentDayOfWeek = getCurrentDayOfWeek();
-        currentDayOfWeekElement.textContent = `Current Day of the Week: ${currentDayOfWeek}`;
-        // Function to get the current UTC time in milliseconds
-        function getCurrentUTCTime() {
-            return new Date().getTime();
-        }
+        // Update the digital clock every second
+        setInterval(updateDigitalClock, 1000);
 
-        // Display the current UTC time
-        const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
-        const currentUTCTime = getCurrentUTCTime();
-        currentUTCTimeElement.textContent = `Current UTC Time: ${currentUTCTime} milliseconds`;
+        // Initial update
+        updateDigitalClock();
     </script>
 </body>
 </html>
