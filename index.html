@@ -15,17 +15,17 @@
 
     <div data-testid="currentUTCTime"></div>
 
+    <div data-testid="myTrack">Frontend</div>
+
     <a href="https://github.com/lumzyj/FrontendPage.git" data-testid="githubURL">GitHub Repository</a>
 
     <script>
-        // Function to update the digital clock
+        // Function to update the digital clock in UTC
         function updateDigitalClock() {
             const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
             const currentTime = new Date();
-            const hours = String(currentTime.getUTCHours()).padStart(2, '0');
-            const minutes = String(currentTime.getUTCMinutes()).padStart(2, '0');
-            const seconds = String(currentTime.getUTCSeconds()).padStart(2, '0');
-            const timeString = `${hours}:${minutes}:${seconds}`;
+            const utcOptions = { timeZone: 'UTC', hour12: false };
+            const timeString = currentTime.toLocaleTimeString('en-US', utcOptions);
             currentUTCTimeElement.textContent = `Current UTC Time: ${timeString}`;
         }
 
@@ -37,4 +37,6 @@
     </script>
 </body>
 </html>
+
+
 
